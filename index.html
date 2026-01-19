@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON | Premium Nepali Shopping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+    <style>
+        /* Payment icon background images - Fixed with fallback */
+        .payment-icon-small.esewa,
+        .icon-wrapper.esewa {
+            background-image: url('assets/payment-icons/esewa.png');
+        }
+        .payment-icon-small.khalti,
+        .icon-wrapper.khalti {
+            background-image: url('assets/payment-icons/khalti.png');
+        }
+        .payment-icon-small.fonepay,
+        .icon-wrapper.fonepay {
+            background-image: url('assets/payment-icons/fonepay.png');
+        }
+        .payment-icon-small.connectips,
+        .icon-wrapper.connectips {
+            background-image: url('assets/payment-icons/connectips.png');
+        }
+        .payment-icon-small.imepay,
+        .icon-wrapper.imepay {
+            background-image: url('assets/payment-icons/imepay.png');
+        }
+        
+        /* Fallback colors if images don't load */
+        .icon-wrapper.esewa {
+            background-color: #5bbf59;
+        }
+        .icon-wrapper.khalti {
+            background-color: #5c2d91;
+        }
+        .icon-wrapper.fonepay {
+            background-color: #1a73e8;
+        }
+        .icon-wrapper.connectips {
+            background-color: #0066ff;
+        }
+        .icon-wrapper.imepay {
+            background-color: #00a859;
+        }
+        .icon-wrapper.cards {
+            background-color: var(--color-bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="loader-ring">
+                <div class="loader-ring-inner"></div>
+            </div>
+            <div class="logo-pulse">
+                <span>NEON</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo">
+                <span class="logo-gradient">NEON</span>
+                <sup class="logo-badge">NP</sup>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" data-text="Home">
+                    <span>Home</span>
+                    <div class="nav-line"></div>
+                </a>
+                <a href="#products" class="nav-link" data-text="Products">
+                    <span>Products</span>
+                    <div class="nav-line"></div>
+                </a>
+                <a href="#collections" class="nav-link" data-text="Collections">
+                    <span>Collections</span>
+                    <div class="nav-line"></div>
+                </a>
+                <a href="#deals" class="nav-link" data-text="Deals">
+                    <span>Hot Deals</span>
+                    <div class="nav-line"></div>
+                </a>
+                <a href="#premium" class="nav-link" data-text="Premium">
+                    <span>Premium</span>
+                    <div class="nav-line"></div>
+                </a>
+            </div>
+            
+            <div class="nav-actions">
+                <div class="search-wrapper">
+                    <input type="text" class="search-input" placeholder="Search products..." aria-label="Search">
+                    <button class="search-btn" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <div class="theme-icon">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </button>
+                
+                <button class="action-btn wishlist-btn" aria-label="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="wishlist-count">2</span>
+                </button>
+                
+                <button class="action-btn cart-btn" aria-label="Shopping cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+            <div class="particles" id="particles"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge" data-aos="fade-up">
+                    <span><i class="fas fa-bolt"></i> Premium Collection</span>
+                </div>
+                
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                    <span class="title-line">Where Nepali Craft</span>
+                    <span class="title-line gradient-text">Meets Luxury</span>
+                </h1>
+                
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                    Discover premium Nepali products with contemporary design, 
+                    delivered with exceptional service across Nepal.
+                </p>
+                
+                <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#products" class="btn btn-primary">
+                        <span>Shop Collection</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#collections" class="btn btn-outline">
+                        <span>Explore Now</span>
+                    </a>
+                </div>
+                
+                <div class="hero-features" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature">
+                        <i class="fas fa-shipping-fast"></i>
+                        <div>
+                            <span class="feature-title">Free Delivery</span>
+                            <span class="feature-sub">Across Nepal</span>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <span class="feature-title">Secure Payments</span>
+                            <span class="feature-sub">eSewa, Khalti, Cards</span>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <span class="feature-title">24/7 Support</span>
+                            <span class="feature-sub">Always Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual" data-aos="zoom-in" data-aos-delay="500">
+                <div class="product-showcase">
+                    <div class="showcase-item" data-delay="0">
+                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Premium Shoes" loading="lazy">
+                        <div class="showcase-label">Premium Footwear</div>
+                    </div>
+                    <div class="showcase-item" data-delay="1">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smart Watch" loading="lazy">
+                        <div class="showcase-label">Smart Tech</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+            <span>Scroll to Explore</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="section products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Curated selection of premium Nepali products</p>
+            </div>
+            
+            <div class="filter-controls" data-aos="fade-up" data-aos-delay="100">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Products</button>
+                    <button class="filter-btn" data-filter="electronics">Electronics</button>
+                    <button class="filter-btn" data-filter="fashion">Fashion</button>
+                    <button class="filter-btn" data-filter="home">Home</button>
+                    <button class="filter-btn" data-filter="crafts">Nepali Crafts</button>
+                </div>
+                
+                <div class="sort-control">
+                    <select class="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Top Rated</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Products loaded dynamically -->
+            </div>
+            
+            <div class="text-center" data-aos="fade-up">
+                <button class="btn btn-load-more">
+                    <span>Load More Products</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections -->
+    <section id="collections" class="section collections">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Premium Collections</h2>
+                <p class="section-subtitle">Explore our curated collections</p>
+            </div>
+            
+            <div class="collections-grid">
+                <div class="collection-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tech & Gadgets" loading="lazy">
+                        <div class="collection-overlay"></div>
+                    </div>
+                    <div class="collection-content">
+                        <h3>Tech & Gadgets</h3>
+                        <p>Latest technology with premium finish</p>
+                        <a href="#" class="collection-link">
+                            <span>Shop Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="collection-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Fashion" loading="lazy">
+                        <div class="collection-overlay"></div>
+                    </div>
+                    <div class="collection-content">
+                        <h3>Luxury Fashion</h3>
+                        <p>Premium apparel & accessories</p>
+                        <a href="#" class="collection-link">
+                            <span>Shop Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="collection-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Home Luxury" loading="lazy">
+                        <div class="collection-overlay"></div>
+                    </div>
+                    <div class="collection-content">
+                        <h3>Home Luxury</h3>
+                        <p>Premium home essentials</p>
+                        <a href="#" class="collection-link">
+                            <span>Shop Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hot Deals -->
+    <section id="deals" class="section deals">
+        <div class="container">
+            <div class="deals-banner" data-aos="zoom-in">
+                <div class="deals-content">
+                    <div class="deals-badge">
+                        <i class="fas fa-bolt"></i>
+                        <span>Flash Sale</span>
+                    </div>
+                    <h2 class="deals-title">Dashain Mega Sale</h2>
+                    <p class="deals-subtitle">Up to 60% off on premium products</p>
+                    
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="days">03</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="hours">18</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="minutes">45</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="seconds">22</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#products" class="btn btn-primary btn-glow">
+                        <span>Shop Flash Sale</span>
+                        <i class="fas fa-fire"></i>
+                    </a>
+                </div>
+                
+                <div class="deals-visual">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Deals" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section class="section payments">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Secure Nepali Payments</h2>
+                <p class="section-subtitle">Trusted payment methods for your convenience</p>
+            </div>
+            
+            <div class="payments-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="payment-card" data-method="esewa">
+                    <div class="payment-icon">
+                        <div class="icon-wrapper esewa">
+                            <!-- eSewa icon loaded via CSS -->
+                        </div>
+                    </div>
+                    <h3>eSewa</h3>
+                    <p>Digital Wallet</p>
+                    <div class="payment-badge">Most Popular</div>
+                </div>
+                
+                <div class="payment-card" data-method="khalti">
+                    <div class="payment-icon">
+                        <div class="icon-wrapper khalti">
+                            <!-- Khalti icon loaded via CSS -->
+                        </div>
+                    </div>
+                    <h3>Khalti</h3>
+                    <p>Mobile Wallet</p>
+                </div>
+                
+                <div class="payment-card" data-method="fonepay">
+                    <div class="payment-icon">
+                        <div class="icon-wrapper fonepay">
+                            <!-- Fonepay icon loaded via CSS -->
+                        </div>
+                    </div>
+                    <h3>Fonepay</h3>
+                    <p>Mobile Banking</p>
+                </div>
+                
+                <div class="payment-card" data-method="connectips">
+                    <div class="payment-icon">
+                        <div class="icon-wrapper connectips">
+                            <!-- Connect IPS icon loaded via CSS -->
+                        </div>
+                    </div>
+                    <h3>Connect IPS</h3>
+                    <p>Bank Transfer</p>
+                </div>
+                
+                <div class="payment-card" data-method="imepay">
+                    <div class="payment-icon">
+                        <div class="icon-wrapper imepay">
+                            <!-- IME Pay icon loaded via CSS -->
+                        </div>
+                    </div>
+                    <h3>IME Pay</h3>
+                    <p>Mobile Payment</p>
+                </div>
+                
+                <div class="payment-card" data-method="cards">
+                    <div class="payment-icon">
+                        <div class="icon-wrapper cards">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                    </div>
+                    <h3>Cards</h3>
+                    <p>Visa/Mastercard</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Section -->
+    <section id="premium" class="section premium">
+        <div class="container">
+            <div class="premium-content" data-aos="fade-right">
+                <div class="premium-badge">Exclusive</div>
+                <h2 class="premium-title">NEON Premium</h2>
+                <p class="premium-text">
+                    Experience luxury shopping with exclusive benefits, 
+                    priority support, and curated collections from Nepal's finest artisans.
+                </p>
+                
+                <div class="premium-features">
+                    <div class="feature">
+                        <i class="fas fa-crown"></i>
+                        <span>Exclusive Products</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Free Express Delivery</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-headset"></i>
+                        <span>Premium Support</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-gift"></i>
+                        <span>Early Access to Sales</span>
+                    </div>
+                </div>
+                
+                <button class="btn btn-premium">
+                    <span>Join Premium</span>
+                    <i class="fas fa-gem"></i>
+                </button>
+            </div>
+            
+            <div class="premium-visual" data-aos="fade-left">
+                <div class="premium-card">
+                    <div class="card-shine"></div>
+                    <div class="card-content">
+                        <i class="fas fa-crown"></i>
+                        <h3>NEON Premium</h3>
+                        <p>Ultimate Shopping Experience</p>
+                        <div class="premium-price">
+                            <span class="price">रु 999/month</span>
+                            <span class="period">or रु 9999/year</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+            <button class="close-cart" aria-label="Close cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-body">
+            <div class="cart-items">
+                <!-- Cart items loaded dynamically -->
+            </div>
+            
+            <div class="cart-empty">
+                <div class="empty-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h4>Your cart is empty</h4>
+                <p>Add some premium products to get started</p>
+                <a href="#products" class="btn btn-primary">Start Shopping</a>
+            </div>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span class="subtotal">रु 0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span class="shipping">रु 100.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span class="total-amount">रु 0.00</span>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary btn-checkout">
+                <i class="fas fa-lock"></i>
+                <span>Proceed to Checkout</span>
+            </button>
+        </div>
+    </div>
+    <div class="cart-overlay"></div>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal">
+        <div class="modal-content">
+            <button class="close-quick-view" aria-label="Close quick view">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="quick-view-body">
+                <!-- Quick view content loaded dynamically -->
+            </div>
+        </div>
+        <div class="modal-overlay"></div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-lock"></i> Secure Checkout</h3>
+                <button class="close-checkout" aria-label="Close checkout">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="checkout-body">
+                <!-- Checkout content loaded dynamically -->
+            </div>
+        </div>
+        <div class="modal-overlay"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#home" class="footer-logo">
+                        <span class="logo-gradient">NEON</span>
+                    </a>
+                    <p class="footer-text">
+                        Premium Nepali e-commerce offering luxury products 
+                        with exceptional quality and service across Nepal.
+                    </p>
+                    
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#products">All Products</a></li>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#deals">Hot Deals</a></li>
+                        <li><a href="#premium">Premium</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping & Delivery</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
+                        <p><i class="fas fa-phone"></i> +977 9800000000</p>
+                        <p><i class="fas fa-envelope"></i> support@neon.com.np</p>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <h5>Newsletter</h5>
+                        <p>Subscribe for exclusive offers</p>
+                        <form class="newsletter-form">
+                            <div class="input-group">
+                                <input type="email" placeholder="Your email" required>
+                                <button type="submit">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 NEON Premium. All rights reserved.</p>
+                <div class="payment-methods">
+                    <span>We Accept:</span>
+                    <div class="payment-icons">
+                        <div class="payment-icon-small esewa" title="eSewa"></div>
+                        <div class="payment-icon-small khalti" title="Khalti"></div>
+                        <div class="payment-icon-small fonepay" title="Fonepay"></div>
+                        <div class="payment-icon-small connectips" title="Connect IPS"></div>
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
